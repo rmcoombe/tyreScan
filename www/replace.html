@@ -45,38 +45,71 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <header class="w3-container w3-white w3-center" style="padding-top:60px; padding-bottom:10px; padding-right: 10px; padding-left: 10px">
     <img src="img/logo_main.png" alt="logo_main">
 </header>
-<h1>Welcome</h1>
-<p>This is the NIO tyre app. It can be used to update wheel, tyre, TPMS and weight info. Select an option from the buttons below or use the top menu</p>
+<h1>Replace/Add</h1>
 
- <div id="row1">
-    <div class="row">
-        <div class="column">
-            <a href="viewSets.html"><img src="img\view_sets.png" alt="view set button" width="100%" height="auto"></a>
-        </div>
-        <div class="column">
-          <a href="updateSet.html"><img src="img\update_set.png" alt="update set button" width="100%" height="auto"></a>
-    </div>
-  </div>
+<label for="set">Choose a Set:</label>
+
+  <select id="setNo" onchange="setNo()">
+    <option value="0">Select Set</option>
+    <option value="set1">1</option>
+    <option value="set2">2</option>
+    <option value="set3">3</option>
+    <option value="set4">4</option>
+    <option value="set5">5</option>
+    <option value="set6">6</option>
+  </select> 
+</br></br>
+  <label for="position">Choose a Position:</label>
+
+  <select id="position" onchange="getWheelInfo()" >
+    <option value="0">Select Position</option>
+    <option value="FL">Front Left</option>
+    <option value="FR">Front Right</option>
+    <option value="RL">Rear Left</option>
+    <option value="RR">Rear Right</option>
+  </select> 
   </br></br>
-
-  <div id="row2" >
+        <table id="table" style="width:100%">
+          <tr>
+            <th>Set</th>
+            <th>Position</th>
+            <th>Wheel No</th>
+            <th>TPM</th>
+            <th>Tyre</th>
+            <th>Weight</th>
+          </tr>
+      </table>
+  <p id="obID" hidden="true">test</p>
+  <div id="replaceInputs" hidden="true">
     <div class="row">
         <div class="column">
-             <a href="clear.html"><img src="img\clear_set.png" alt="clear set button" width="100%" height="auto"></a>
+            <label for="wheel">New Wheel No</label><br>
+            <input type="number" id="wheelNumber" name="wheelNumber" value=""></br></br>
         </div>
         <div class="column">
-           <a href="replace.html"><img src="img\replace_wheel.png" alt="replace wheel button" width="100%" height="auto"></a>
+            <label for="tpms">New TPMS No</label><br>
+                <input type="number" id="tpmsNumber" name="tpmsNumber" value=""></br></br>
+        </div>
+    </div>
+    <button class="mainButton" onclick="replaceWheel()">Update</button>
+  </div>
+  
+
+  <div id="footer" hidden="true" class="w3-display-bottomleft">
+    <div class="row">
+        <div class="column">
+            <img src="img/scanWheel.png" style="width:100%"; onclick="wheelScan()" alt="scan_image">
+        </div>
+        <div class="column">
+            <img src="img/scanTPM.png" style="width:100%" onclick="tpmScan()" alt="scan_image">
         </div>
     </div>
   </div>
-  </div>
-
-
-<div id="footer" class="w3-display-bottomleft">
-<img src="img\footerImage.png" alt="nio and mich logo" width="100%" height="auto">  
-</div> 
+ 
 
 <script>
+var setChosen ="false";
+
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
   var x = document.getElementById("navDemo");
@@ -88,7 +121,9 @@ function myFunction() {
 }
 
 
-
+function setNo(){
+  setChosen=true;
+}
 
 
 </script>

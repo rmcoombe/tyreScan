@@ -45,37 +45,23 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <header class="w3-container w3-white w3-center" style="padding-top:60px; padding-bottom:10px; padding-right: 10px; padding-left: 10px">
     <img src="img/logo_main.png" alt="logo_main">
 </header>
-<h1>Welcome</h1>
-<p>This is the NIO tyre app. It can be used to update wheel, tyre, TPMS and weight info. Select an option from the buttons below or use the top menu</p>
+<h1>Total Clear</h1>
+<p>On this page we can clear all of the current data for each set. Be careful as once this is done it cannot be undone, you will need to re-enter any missing data</p>
 
- <div id="row1">
-    <div class="row">
-        <div class="column">
-            <a href="viewSets.html"><img src="img\view_sets.png" alt="view set button" width="100%" height="auto"></a>
-        </div>
-        <div class="column">
-          <a href="updateSet.html"><img src="img\update_set.png" alt="update set button" width="100%" height="auto"></a>
-    </div>
-  </div>
-  </br></br>
+<h3>Clear All Data</h3>
+<p>This will clear the all of the data, wheel no, TPMS no, tyre no and weight informtation for the selected set</p>
+  <select id="ClrSetNo" onchange="selectedSet()">
+        <option value="0">Select Set</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+  </select>
+  <button id="clearSet" type="button" onclick="totalClearSet()" hidden="true"></button>
 
-  <div id="row2" >
-    <div class="row">
-        <div class="column">
-             <a href="clear.html"><img src="img\clear_set.png" alt="clear set button" width="100%" height="auto"></a>
-        </div>
-        <div class="column">
-           <a href="replace.html"><img src="img\replace_wheel.png" alt="replace wheel button" width="100%" height="auto"></a>
-        </div>
-    </div>
-  </div>
-  </div>
-
-
-<div id="footer" class="w3-display-bottomleft">
-<img src="img\footerImage.png" alt="nio and mich logo" width="100%" height="auto">  
-</div> 
-
+ 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
@@ -87,7 +73,11 @@ function myFunction() {
   }
 }
 
-
+function selectedSet(){
+  var chosenSet= document.getElementById("ClrSetNo").value;
+  document.getElementById("clearSet").innerText="Click to Clear Set " + chosenSet;
+  document.getElementById("clearSet").hidden=false;
+}
 
 
 

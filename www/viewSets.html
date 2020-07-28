@@ -25,7 +25,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-left w3-padding-large w3-hover-white w3-large w3-blue-grey" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="home.html" class="w3-bar-item w3-button w3-padding-large w3-blue-grey"><i class="fa fa-home fa-2x w3-padding-10 w3-text-white"></i></a>
     <a href="viewSets.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">View Sets</a>
-    <a href="updatSet.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Update Set</a>
+    <a href="updateSet.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Update Set</a>
     <a href="clear.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Clear</a>
     <a href="replace.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Replace or Add Wheel</a>
 
@@ -45,36 +45,27 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <header class="w3-container w3-white w3-center" style="padding-top:60px; padding-bottom:10px; padding-right: 10px; padding-left: 10px">
     <img src="img/logo_main.png" alt="logo_main">
 </header>
-<h1>Welcome</h1>
-<p>This is the NIO tyre app. It can be used to update wheel, tyre, TPMS and weight info. Select an option from the buttons below or use the top menu</p>
+<label for="cars">Choose a Set:</label>
 
- <div id="row1">
-    <div class="row">
-        <div class="column">
-            <a href="viewSets.html"><img src="img\view_sets.png" alt="view set button" width="100%" height="auto"></a>
-        </div>
-        <div class="column">
-          <a href="updateSet.html"><img src="img\update_set.png" alt="update set button" width="100%" height="auto"></a>
-    </div>
-  </div>
-  </br></br>
+  <select id="setNo" onchange="getSet()">
+    <option value="0">Select Set</option>
+    <option value="set1">1</option>
+    <option value="set2">2</option>
+    <option value="set3">3</option>
+    <option value="set4">4</option>
+    <option value="set5">5</option>
+    <option value="set6">6</option>
+  </select>    
 
-  <div id="row2" >
-    <div class="row">
-        <div class="column">
-             <a href="clear.html"><img src="img\clear_set.png" alt="clear set button" width="100%" height="auto"></a>
-        </div>
-        <div class="column">
-           <a href="replace.html"><img src="img\replace_wheel.png" alt="replace wheel button" width="100%" height="auto"></a>
-        </div>
-    </div>
-  </div>
-  </div>
-
-
-<div id="footer" class="w3-display-bottomleft">
-<img src="img\footerImage.png" alt="nio and mich logo" width="100%" height="auto">  
-</div> 
+        <table id="table" style="width:100%">
+          <tr>
+            <th>Position</th>
+            <th>Wheel No</th>
+            <th>TPM No</th>
+            <th>Tyre No</th>
+            <th>Weight</th>
+          </tr>
+        </table>
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button

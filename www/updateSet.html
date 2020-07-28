@@ -45,36 +45,50 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <header class="w3-container w3-white w3-center" style="padding-top:60px; padding-bottom:10px; padding-right: 10px; padding-left: 10px">
     <img src="img/logo_main.png" alt="logo_main">
 </header>
-<h1>Welcome</h1>
-<p>This is the NIO tyre app. It can be used to update wheel, tyre, TPMS and weight info. Select an option from the buttons below or use the top menu</p>
-
- <div id="row1">
-    <div class="row">
-        <div class="column">
-            <a href="viewSets.html"><img src="img\view_sets.png" alt="view set button" width="100%" height="auto"></a>
+      <div class="form">
+        <div class="formContent">
+            
+                <label for="wheel">Wheel No</label><br>
+                <input type="number" id="wheelNumber" name="wheelNumber" value=""></br></br>
+                <button  class="mainButton" onclick="getWheel()">Search</button>
+            </div>
         </div>
-        <div class="column">
-          <a href="updateSet.html"><img src="img\update_set.png" alt="update set button" width="100%" height="auto"></a>
+        </br>
+      <table id="table" style="width:100%">
+          <tr>
+            <th>Set</th>
+            <th>Wheel No</th>
+            <th>Position</th>
+            <th>TPM</th>
+            <th>Tyre</th>
+            <th>Weight</th>
+          </tr>
+      </table>
+
+    </div>
+    <p id="obID" hidden="true"></p>
+    <p id="foundSet" hidden="true"></p>
+
+    <div class="form">
+     <div class="formContent">
+            <label for="tyre">Tyre No</label><br>
+            <input type="number" id="tyreNumber" name="tyreNumber" value=""><br>
+            <label for="tyre">Weight</label><br>
+            <input type="number" id="weight" name="weight" value=""><br><br>
+            <button class="mainButton" onclick="updateWheel()">Update</button>
     </div>
   </div>
-  </br></br>
-
-  <div id="row2" >
+  <div id="footer" class="w3-display-bottomleft">
     <div class="row">
         <div class="column">
-             <a href="clear.html"><img src="img\clear_set.png" alt="clear set button" width="100%" height="auto"></a>
+            <img src="img/scanWheel.png" style="width:100%"; onclick="wheelScan()" alt="scan_image">
         </div>
         <div class="column">
-           <a href="replace.html"><img src="img\replace_wheel.png" alt="replace wheel button" width="100%" height="auto"></a>
+            <img src="img/scanTyre.png" style="width:100%" onclick="tyreScan()" alt="scan_image">
         </div>
     </div>
   </div>
-  </div>
 
-
-<div id="footer" class="w3-display-bottomleft">
-<img src="img\footerImage.png" alt="nio and mich logo" width="100%" height="auto">  
-</div> 
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
