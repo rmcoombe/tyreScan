@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>My Travel Journal</name>
+    <name>barcodescanner</name>
     <description>
         Hello World sample application that responds to the deviceready event.
     </description>
@@ -12,6 +12,7 @@
     <preference name="android-minSdkVersion" value="14" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
+    <plugin name="phonegap-plugin-portrait-barcodescanner"/>
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
     <plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />
@@ -30,11 +31,7 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <plugin name="phonegap-plugin-media-stream" source="npm"/>
-    <plugin name="phonegap-plugin-portrait-barcodescanner" source="npm"/>
-	
     
-   
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -42,8 +39,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-	<!-- all platforms -->
-	<preference name="orientation" value="portrait" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
@@ -52,4 +47,3 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 </widget>
-
