@@ -224,7 +224,7 @@ function updateWheel(){
 	var weightString = document.getElementById("weight").value;
 
 	var tyre = parseInt(tyreString,10);
-	var weight = parseInt(weightString,10);
+	var weight = parseFloat(weightString,10);
 	console.log(obID);
 
     if (tyreString =='' && weightString !=''){
