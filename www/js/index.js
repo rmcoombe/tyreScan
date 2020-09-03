@@ -48,10 +48,10 @@ cordova.plugins.barcodeScanner.scan(
    );
 };
 
-function tpmScan(){
+function tpmsScan(){
 cordova.plugins.barcodeScanner.scan(
       function (result) {
-            document.getElementById("tpmNumber").value = result.text;
+            document.getElementById("tpmsNumber").value = result.text;
           
       },
       function (error) {
