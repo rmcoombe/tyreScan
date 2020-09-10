@@ -27,7 +27,7 @@ function wheelScan(){
 cordova.plugins.barcodeScanner.scan(
       function (result) {
             document.getElementById("wheelNumber").value = result.text;
-            getWheel();
+            getWheel() ;
           
       },
       function (error) {
